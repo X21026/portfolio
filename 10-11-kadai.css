@@ -1,0 +1,957 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: "BIZ UDPGothic";
+}
+
+#home {
+    color: #ffffff;
+    list-style: none;
+    position: relative;
+    /* 子要素でposition: absoluteしたときの基準点をsectionの左上とするための設定 */
+    padding-bottom: 350px;
+}
+#home main {
+    min-height: 100vh; /* sectionと幅高さを合わせる */
+    /* コンテンツセンタリング */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#home li a img {
+    margin-left: 25px;
+    height: 130px;
+    width: 130px;
+}
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 0px;
+    display: flex;
+    height: 100px;
+    width: 100px;
+    justify-content: center;
+    z-index: 90;
+    background-color: #FFD610;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 8px;
+    width: 70px;
+    background-color: #ffffff;
+    position: absolute;
+}
+.menu-btn span:before {
+    top: -20px;
+}
+.menu-btn span {
+    top: 35px
+}
+.menu-btn span:after {
+    top: 20px;
+}
+.menu-btn p {
+    top: 67px;
+    font-size: larger;
+    font-weight: bolder;
+    color:#ffffff;
+    position: absolute;
+}
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    top: 0px;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0px;
+    transform: rotate(-45deg);
+}
+#menu-btn-check:checked ~ .menu-btn p {
+    display: none;
+}
+#menu-btn-check {
+    display: none;
+}
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: #FFD610;
+}
+.menu-content ul li {
+    text-align: center;
+    list-style: none;
+}
+.menu-content ul li img{
+    margin-left: 25px;
+    display: flex;
+    height: 130px;
+    width: 130px;
+}
+.menu-content ul li a {
+    color:#ffffff;
+    font-size: 25px;
+    font-weight: bolder;
+}
+.menu-content ul li p {
+    color:#ffffff;
+    font-size: 13px;
+    padding: 15px 0 30px;
+    font-weight: bolder;
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;
+}
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 80;
+    background-color: #FFD610;
+    transition: all 0.5s;
+}
+#home > main > h1 {
+    font-size: 80px;
+    text-align: right;
+    line-height: 80px;
+    top: 220px;
+    right: 5px;
+    position: absolute;
+}
+#home > main > p {
+    font-size: 24px;
+    text-align: right;
+    top: 480px;
+    right: 8px;
+    position: absolute;
+}
+.upper {
+    background-image: url('OZP_senbanwoganbaru1188_TP_V.jpg');
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: -73%;
+    width: 158%;
+    height: 135%;
+    z-index: -1;  /* 重なりの順番を背景(0未満)の中でも前側へ */
+}
+.bottom {
+    background-color: #242424;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 146%;
+    z-index: -2;  /* 重なりの順番を背景(0未満)の中でも後ろ側へ */
+}
+@media (min-width: 769px) {
+    #home > main > h1 {
+        right: 150px;
+    }
+    #home > main > p {
+        right: 150px;
+    }
+    .upper {
+        background-image: url('OZP_senbanwoganbaru1188_TP_V.jpg');
+        background-position: center center;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 75%;
+        height: 100%;
+        z-index: -1;  /* 重なりの順番を背景(0未満)の中でも前側へ */
+    }
+    .bottom {
+        background-color: #242424;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 85%;
+        height: 110%;
+        z-index: -2;  /* 重なりの順番を背景(0未満)の中でも後ろ側へ */
+    }
+}
+
+.button-container a {
+    color: #000;
+    background: #FFD610;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    padding: 0.5em 2em;
+    border-radius: 9999999999px;
+    border: 2px solid #E8E8E8;
+}
+.button-container2 a {
+    color: #ffffff;
+    background: #000;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    padding: 0.5em 2em;
+    border-radius: 9999999999px;
+}
+@media (min-width: 769px) {
+    .button-container a {
+        color: #000;
+        background: #FFD610;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        padding: 0.5em 2em;
+        border-radius: 9999999999px;
+    }
+    .button-container2 a {
+        color: #ffffff;
+        background: #000;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        padding: 0.5em 2em;
+        border-radius: 9999999999px;
+    }
+}
+
+#service {
+    position: relative;
+    padding-bottom: 2750px;
+}
+#service > h2 {
+    font-size: 35px;
+    border-bottom: solid 5px darkgray;
+    left: 15px;
+    position: absolute;
+}
+#service > p {
+    font-size: 35px;
+    line-height: 45px;
+    top: 120px;
+    left: 15px;
+    position: absolute;
+}
+.serviceBottom {
+    background-size: auto auto; 
+    background-color: rgba(229, 248, 254, 1); 
+    background-image: repeating-linear-gradient(135deg, transparent, transparent 24px, rgba(215, 244, 252, 1) 24px, rgba(215, 244, 252, 1) 48px );
+    top: 20px;
+    left: 0;
+    height: 380px;
+    width: 80%;
+    position: absolute;
+    z-index: -4;
+}
+.serviceBottom2 {
+    background-size: auto auto; 
+    background-color: #E8E8E8;
+    top: 550px;
+    height: 2040px;
+    width: 100%;
+    position: absolute;
+    z-index: -4;
+}
+.service1 {
+    background:  url('YOTAKA160328440I9A9327_TP_V4.jpg');
+    background-position: center center;
+    background-size: cover;
+    top: 370px;
+    left: 15px;
+    right: 15px;
+    height: 15%;
+    position: absolute;
+    z-index: -3;
+}
+.service1 h1 {
+    font-size: 80px;
+    color: #FFD610;
+    top: -40px;
+    right: 10px;
+    position: absolute;
+}
+.service1 > .yellowbox1 {
+    background-color: #FFD610;
+    font-size: 20px;
+    top: 300px;
+    left: -15px;
+    padding: 0.5em 1.5em;
+    position: absolute;
+    z-index: -1;
+}
+.service1 > .whitebox1 {
+    background-color: #ffffff;
+    top: 340px;
+    padding: 40px 20px;
+    position: absolute;
+    z-index: -2;
+}
+.whitebox1 > h2 {
+    font-size: 30px;
+    font-weight: normal;
+    padding-bottom: 30px;
+}
+.whitebox1 > h2::after {
+    border: solid 1px darkgray;
+    top: 80px;
+    left: 20px;
+    width: 82%;
+    position: absolute;
+    content: '';
+}
+.whitebox1 > p {
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.service2 {
+    background:  url('tsuchimoto0I9A6635_TP_V4.jpg');
+    background-position: center center;
+    background-size: cover;
+    top: 1100px;
+    left: 15px;
+    right: 15px;
+    height: 15%;
+    position: absolute;
+    z-index: -3;
+}
+.service2 h1 {
+    font-size: 80px;
+    color: #FFD610;
+    top: -40px;
+    right: 10px;
+    position: absolute;
+}
+.service2 > .yellowbox2 {
+    background-color: #FFD610;
+    font-size: 20px;
+    top: 300px;
+    left: -15px;
+    padding: 0.5em 1.5em;
+    position: absolute;
+    z-index: -1;
+}
+.service2 > .whitebox2 {
+    background-color: #ffffff;
+    top: 340px;
+    padding: 40px 20px;
+    position: absolute;
+    z-index: -2;
+}
+.whitebox2 > h2 {
+    font-size: 30px;
+    font-weight: normal;
+    padding-bottom: 1em;
+}
+.whitebox2 > h2::after {
+    border: solid 1px darkgray;
+    top: 80px;
+    left: 20px;
+    width: 82%;
+    position: absolute;
+    content: '';
+}
+.whitebox2 > p {
+    font-size: 25px;
+    line-height: 30px;
+}
+ 
+.service3 {
+    background:  url('PASONA_21_TP_V4.jpg');
+    background-position: center center;
+    background-size: cover;
+    top: 1830px;
+    left: 15px;
+    right: 15px;
+    height: 15%;
+    position: absolute;
+    z-index: -3;
+}
+.service3 h1 {
+    font-size: 80px;
+    color: #FFD610;
+    top: -40px;
+    right: 10px;
+    position: absolute;
+}
+.service3 > .yellowbox3 {
+    background-color: #FFD610;
+    font-size: 20px;
+    top: 300px;
+    left: -15px;
+    padding: 0.5em 1.5em;
+    position: absolute;
+    z-index: -1;
+}
+.service3 > .whitebox3 {
+    background-color: #ffffff;
+    top: 340px;
+    padding: 40px 20px;
+    position: absolute;
+    z-index: -2;
+}
+.whitebox3 > h2 {
+    font-size: 30px;
+    font-weight: normal;
+    padding-bottom: 1em;
+}
+.whitebox3 > h2::after {
+    border: solid 1px darkgray;
+    top: 80px;
+    left: 20px;
+    width: 82%;
+    position: absolute;
+    content: '';
+}
+.whitebox3 > p {
+    font-size: 25px;
+    line-height: 30px;
+}
+@media (min-width: 769px) {
+    #service {
+        top: -300px;
+        padding-bottom: 700px;
+        position: relative;
+    }
+    #service > h2 {
+        left: 15%;
+        position: absolute;
+    }
+    #service > p {
+        font-size: 30px;
+        top: 80px;
+        left: 17%;
+        position: absolute;
+    }
+    .serviceBottom {
+        top: 20px;
+        left: 12%;
+        height: 180px;
+        width: 20%; 
+    }
+    .serviceBottom2 {
+        top: 250px;
+        height: 580px;
+        width: 100%;  
+    }
+    .service1 {
+        background:  url('YOTAKA160328440I9A9327_TP_V4.jpg');
+        background-position: center center;
+        background-size: cover;
+        top: 250px;
+        left: 13%;
+        height: 32%;
+        width: 22%;
+        position: absolute;
+        z-index: -3;
+    }
+    .service1 h1 {
+        font-size: 60px;
+        color: #FFD610;
+        top: -30px;
+        right: 0;
+        position: absolute;
+    }
+    .service1 > .yellowbox1 {
+        background-color: #FFD610;
+        font-size: 13px;
+        top: 190px;
+        left: 0;
+        padding: 0.5em 1.5em;
+        position: absolute;
+        z-index: -1;
+    }
+    .service1 > .whitebox1 {
+        background-color: #ffffff;
+        top: 220px;
+        padding: 20px;
+        position: absolute;
+        z-index: -2;
+    }
+    .whitebox1 > h2 {
+        font-size: 18px;
+        padding-bottom: 1em;
+    }
+    .whitebox1 > h2::after {
+        border: solid 1px darkgray;
+        top: 45px;
+        left: 20px;
+        width: 82%;
+        position: absolute;
+        content: '';
+    }
+    .whitebox1 > p {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .service2 {
+        background:  url('tsuchimoto0I9A6635_TP_V4.jpg');
+        background-position: center center;
+        background-size: cover;
+        top: 330px;
+        left: 39%;
+        height: 32%;
+        width: 22%;
+        position: absolute;
+        z-index: -3;
+    }
+    .service2 h1 {
+        font-size: 60px;
+        color: #FFD610;
+        top: -30px;
+        right: 0;
+        position: absolute;
+    }
+    .service2 > .yellowbox2 {
+        background-color: #FFD610;
+        font-size: 13px;
+        top: 190px;
+        left: 0;
+        padding: 0.5em 1.5em;
+        position: absolute;
+        z-index: -1;
+    }
+    .service2 > .whitebox2 {
+        background-color: #ffffff;
+        top: 220px;
+        padding: 20px;
+        position: absolute;
+        z-index: -2;
+    }
+    .whitebox2 > h2 {
+        font-size: 18px;
+        padding-bottom: 1em;
+    }
+    .whitebox2 > h2::after {
+        border: solid 1px darkgray;
+        top: 45px;
+        left: 20px;
+        width: 82%;
+        position: absolute;
+        content: '';
+    }
+    .whitebox2 > p {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .service3 {
+        background:  url('PASONA_21_TP_V4.jpg');
+        background-position: center center;
+        background-size: cover;
+        top: 430px;
+        left: 65%;
+        height: 32%;
+        width: 22%;
+        position: absolute;
+        z-index: -3;
+    }
+    .service3 h1 {
+        font-size: 60px;
+        color: #FFD610;
+        top: -30px;
+        right: 0;
+        position: absolute;
+    }
+    .service3 > .yellowbox3 {
+        background-color: #FFD610;
+        font-size: 13px;
+        top: 190px;
+        left: 0;
+        padding: 0.5em 1.5em;
+        position: absolute;
+        z-index: -1;
+    }
+    .service3 > .whitebox3 {
+        background-color: #ffffff;
+        top: 220px;
+        padding: 20px;
+        position: absolute;
+        z-index: -2;
+    }
+    .whitebox3 > h2 {
+        font-size: 18px;
+        padding-bottom: 1em;
+    }
+    .whitebox3 > h2::after {
+        border: solid 1px darkgray;
+        top: 45px;
+        left: 20px;
+        width: 82%;
+        position: absolute;
+        content: '';
+    }
+    .whitebox3 > p {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .serviceBottom3 {
+        background-size: auto auto; 
+        background-color: rgba(255, 226, 88, 1); 
+        background-image: repeating-linear-gradient(135deg, transparent,transparent 24px,rgba(254, 215, 13, 1) 24px,rgba(254, 215, 13, 1) 48px );
+        top: 160px;
+        left: 50%;
+        right: 13%;
+        height: 120px;
+        position: absolute;
+        z-index: -3;
+    }
+}
+
+#information {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 830px;
+}
+#information h2 {
+    font-size: 35px;
+    border-bottom: solid 5px darkgray;
+    left: 35px;
+    position: absolute;
+}
+#information main {
+    background-color: #ffffff;
+    border: 2px solid #E8E8E8;
+    left: 45px;
+    right: 45px;
+    top: 160px;
+    height: 410px;
+    position: absolute;
+    text-align: left;
+    padding: 20px;
+}
+#information main p {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+#information main a {
+    color: #000;
+    font-size: 20px;
+}
+.link-container {
+    padding-bottom: 50px;
+}
+.link-container2 {
+    padding-bottom: 50px;
+}
+.informationBottom {
+    background-size: auto auto; 
+    background-color: rgba(255, 226, 88, 1); 
+    background-image: repeating-linear-gradient(135deg, transparent,transparent 24px,rgba(254, 215, 13, 1) 24px,rgba(254, 215, 13, 1) 48px );
+    top: 27.5px;
+    left: 20px;
+    right: 20px;
+    height: 560px;
+    position: absolute;
+    z-index: -1;
+}
+.button-container {
+    top: 650px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+@media (min-width: 769px) {
+    #information {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding-bottom: 650px;
+    }
+    #information h2 {
+        left: 15%;
+    }
+    #information main {
+        background-color: #ffffff;
+        left: 25%;
+        top: 100px;
+        height: 300px;
+        width: 50%;
+        position: absolute;
+        text-align: left;
+        padding: 20px;
+    }
+    #information main .info {
+        display: flex;
+    }
+    #information main p {
+        font-size: 15px;
+        padding-right: 60px;
+    }
+    #information main a {
+        color: #000;
+        font-size: 15px;
+    }
+    .informationBottom {
+        background-size: auto auto; 
+        background-color: rgba(255, 226, 88, 1); 
+        background-image: repeating-linear-gradient(135deg, transparent,transparent 24px,rgba(254, 215, 13, 1) 24px,rgba(254, 215, 13, 1) 48px );
+        top: 27.5px;
+        left: 0;
+        height: 450px;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+    }
+    .button-container {
+        top: 340px;
+        position: absolute;
+    }
+}
+
+#recruit {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 930px;
+}
+#recruit h2 {
+    font-size: 35px;
+    border-bottom: solid 5px darkgray;
+    left: 35px;
+    position: absolute;
+}
+.recruitment {
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 330px;
+    left: 0px;
+    width: 90%;
+    position: absolute;
+    padding: 20px 0 75px;
+}
+.recruitment p {
+    font-size: 35px;
+    
+    padding-bottom: 30px;
+}
+.recruitUpper {
+    background:  url('PASONA_19_TP_V4.jpg');
+    background-position: center center;
+    background-size: cover;
+    top: 110px;
+    width: 100%;
+    height: 38%;
+    position: absolute;
+    z-index: -1;
+}
+.recruitBottom {
+    background-size: auto auto; 
+    background-color: rgba(229, 248, 254, 1); 
+    background-image: repeating-linear-gradient(135deg, transparent, transparent 24px, rgba(215, 244, 252, 1) 24px, rgba(215, 244, 252, 1) 48px );
+    top: 20px;
+    left: 20px;
+    width: 75%;
+    height: 200px;
+    position: absolute;
+    z-index: -2;
+}
+.recruitBottom2 {
+    background-size: auto auto; 
+    background-color: rgba(255, 226, 88, 1); 
+    background-image: repeating-linear-gradient(135deg, transparent,transparent 24px,rgba(254, 215, 13, 1) 24px,rgba(254, 215, 13, 1) 48px );
+    top: 425px;
+    right: 20px;
+    width: 75%;
+    height: 270px;
+    position: absolute;
+    z-index: -3;
+}
+@media (min-width: 769px) {
+    #recruit {
+        position: relative;
+        padding-bottom: 930px;
+    }
+    #recruit h2 {
+        font-size: 35px;
+        left: 15%;
+        position: absolute;
+    }
+    .recruitment {
+        background-color: rgba(255, 255, 255, 0.5);
+        top: 210px;
+        left: 15%;
+        width: 55%;
+        position: absolute;
+        padding: 20px;
+        padding-bottom: 210px;
+        text-align: left;
+    }
+    .recruitment p {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .recruitment .button-container2 {
+        top: 100px;
+        position: absolute;
+    }
+    .recruitUpper {
+        background:  url('PASONA_19_TP_V4.jpg');
+        background-position: center center;
+        background-size: cover;
+        top: 50px;
+        left: 30%;
+        width: 50%;
+        height: 45%;
+        position: absolute;
+        z-index: -1;
+    }
+    .recruitBottom {
+        background-size: auto auto; 
+        background-color: rgba(229, 248, 254, 1); 
+        background-image: repeating-linear-gradient(135deg, transparent, transparent 24px, rgba(215, 244, 252, 1) 24px, rgba(215, 244, 252, 1) 48px );
+        top: 20px;
+        left: 13%;
+        width: 35%;
+        height: 330px;
+        position: absolute;
+        z-index: -2;
+    }
+    .recruitBottom2 {
+        background-size: auto auto; 
+        background-color: rgba(255, 226, 88, 1); 
+        background-image: repeating-linear-gradient(135deg, transparent,transparent 24px,rgba(254, 215, 13, 1) 24px,rgba(254, 215, 13, 1) 48px );
+        top: 210px;
+        left: 32%;
+        width: 50%;
+        height: 350px;
+        position: absolute;
+        z-index: -3;
+    }
+}
+
+#consultation {
+    text-align: center;
+    background-image: url('PAK85_kikaihandle20141028182041_TP_V4.jpg');
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 380px;
+    top: 0;
+    z-index: -2;
+    position: relative;
+}
+#consultation::before {
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    content: ' ';
+}
+#consultation p {
+    color: #ffffff;
+    font-size: 37px;
+    padding: 75px 0 25px;
+    line-height: 45px;
+}
+.button-container3 a {
+    color: #000;
+    background: #FFD610;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    padding: 0.5em 2em;
+    border-radius: 9999999999px;
+    border: 2px solid #E8E8E8;
+}
+@media (min-width: 769px) {
+    #consultation {
+        text-align: center;
+        background-image: url('PAK85_kikaihandle20141028182041_TP_V4.jpg');
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 400px;
+        top: -170px;
+        z-index: -2;
+        position: relative;
+    }
+    #consultation p {
+        color: #ffffff;
+        font-size: 25px;
+        padding: 120px 0 25px;
+        line-height: 30px;
+    }
+    .button-container3 a {
+        font-size: 20px;
+    }
+}
+
+#contact {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 165px 0 165px;
+}
+#contact img {
+    height: 130px;
+    width: 130px;
+}
+#contact p {
+    font-size: 15px;
+    line-height: 20px;
+    padding-bottom: 40px;
+}
+@media (min-width: 769px) {
+    #contact {
+        position: relative;
+        padding-bottom: 80px;
+    }
+    #contact main {
+        top: 30px; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+    #contact p {
+        font-size: 13px;
+        line-height: 15px;
+    }
+}
+
+footer {
+    background-size: auto auto; 
+    background-color: rgba(255, 226, 88, 1); 
+    background-image: repeating-linear-gradient(135deg, transparent,transparent 24px,rgba(254, 215, 13, 1) 24px,rgba(254, 215, 13, 1) 48px );
+    height: 120px;
+    position: relative;
+}
+footer p {
+    font-size: 25px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+@media (min-width: 769px) {
+    footer {
+        height: 60px;
+    }
+    footer p {
+        font-size: 15px;
+    }
+}
