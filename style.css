@@ -373,30 +373,43 @@ body {
     height: 60px;
     border-radius: 8px;
 }
-/* トップへ戻るボタン (参考: https://www.fuji-blo.com/entry/page-top) */
-#page-top {
+
+#page_top{
+    width: 60px;
+    height: 60px;
     position: fixed;
-    right: 5px;
-    bottom: 20px;
-    height: 50px;
-    padding: 0 0 0 35px;
+    right: 10px;
+    bottom: 10px;
+    background: #e25407;
+    opacity: 0.6;
+    }
   
-    border-top: solid 1px;
-    text-decoration: none;
-    color: rgb(128, 128,128);
-    transform: rotate(90deg);
-}
-#page-top::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -1px;
-    left: 0px;
-    width: 15px;
-    border-top: solid 1px;
-    transform: rotate(35deg);
-    transform-origin: left top;
-}
+    /* Font Awesome */
+    #page_top::before {
+        content: "";
+        display: inline-block;
+        left: 22px;
+        bottom: 9px;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-top: 3px solid #fff;
+        border-left: 3px solid #fff;
+        transform: rotate(45deg);
+    }
+  
+    #page_top::after{
+      content: 'TOP';
+      font-size: 13px;
+      color: #fff;
+      position: absolute;
+      top: 9px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;
+    }
 
 @keyframes fadeUpAnime{
     from {
